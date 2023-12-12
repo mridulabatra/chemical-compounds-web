@@ -1,0 +1,27 @@
+<div class="create-section">
+  <button mat-raised-button class="create-button" color="primary" (click)="openCreateDialog()">Create</button>
+  <button mat-raised-button class="sort-button" (click)="toggleSortOrder()">
+    Sort By Name
+    <i class="fas" [ngClass]="getSortIcon()"></i>
+  </button>
+</div>
+
+<div class="card-section">
+<mat-card *ngFor="let compound of compounds| slice: pageIndex * pageSize : (pageIndex + 1) * pageSize" class="card">
+  <div class="card-content" (click)="navigateToDetails(compound.id)">
+    <img mat-card-image [src]="compound.image_source" alt="{{ compound.name }}">
+    <div class="card-text">
+      <mat-card-content>
+        <h3 class="compound-name">{{ compound.name }}</h3>
+      </mat-card-content>
+    </div>
+    <button mat-icon-button class="delete-btn" color="warn" (click)="deleteClicked($event, compound.id)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+</mat-card>
+</div>
+
+<mat-paginator [length]="compounds.length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+  (page)="onPageChange($event)">
+</mat-paginator>

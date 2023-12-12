@@ -1,0 +1,33 @@
+<div class="compound-details-container" *ngIf="compound">
+  <div class="back-icon" (click)="navigateBack()">
+    <i class="fas fa-arrow-left"></i> Back
+  </div>
+  <div class="compound-details-header">
+    <h1>{{ compound.name }}</h1>
+    <img class="compound-image" [src]="compound.image_source" alt="{{ compound.name }}">
+  </div>
+  <p class="compound-description">{{ compound.description }}</p>
+
+  <div *ngIf="!editing">
+    <button class="edit-button" (click)="startEditing()">Edit</button>
+  </div>
+
+  <div *ngIf="editing" class="edit-form">
+    <form (ngSubmit)="updateCompound()" class="editing-form">
+      <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" id="editName" name="editName" [(ngModel)]="editName" required>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea matInput id="editDescription" name="editDescription" [(ngModel)]="editDescription"
+          required></textarea>
+      </mat-form-field>
+
+      <div>
+        <button mat-raised-button class="update-btn" color="primary" type="submit">Update</button>
+        <button mat-button type="button" class="cancel-btn" (click)="cancelEditing()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>

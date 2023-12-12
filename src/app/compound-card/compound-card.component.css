@@ -1,0 +1,112 @@
+:host {
+  margin: 3vh 0vw 2vh 0vw;
+}
+
+.card-content {
+  padding: 16px;
+  text-align: center;
+}
+
+.card-section{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card {
+  width: 300px;
+  margin: 20px 2vw;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 95%;
+  text-align: center;
+  background-color: rgb(96 88 88 / 70%);
+  padding: 8px;
+  border-radius: 0px 0px 8px 8px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  max-height: 230px;
+  margin: 3px;
+  object-fit: cover;
+  max-width: 230px;
+}
+
+.compound-name {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+h3{
+  margin: 0;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.create-section {
+  width: 100%;
+  margin: 20vh 0 2vh 4vw;
+}
+
+.sort-button i {
+  margin-left: 5px;
+}
+
+.sort-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 2px 15px;
+  margin-left: 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.create-button {
+  background-color: #3498db;
+  color: white;
+  padding: 2px 15px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.sort-button:hover,
+.create-button:hover {
+  opacity: 0.8;
+}
+
+.mat-paginator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .card {
+    width: 100%;
+  }
+}

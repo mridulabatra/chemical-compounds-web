@@ -1,0 +1,39 @@
+:host {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+  
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background-color: #333;
+    color: #fff;
+    padding: 8px;
+    text-align: center;
+    z-index: 1000;
+    justify-content: center;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .header {
+      padding: 5px;
+      font-size: 18px;
+    }
+  
+    .subtitle {
+      font-size: 12px;
+    }
+  }
+  

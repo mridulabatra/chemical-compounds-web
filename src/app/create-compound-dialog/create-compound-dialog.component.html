@@ -1,0 +1,28 @@
+<form class="create-form" novalidate [formGroup]="compoundForm" #createFrom="ngForm">
+  <h2 mat-dialog-title>Create New Compound</h2>
+  <div mat-dialog-content [formGroup]="compoundForm" (ngSubmit)="createCompound()" class="creating-form">
+    <mat-form-field>
+      <input matInput placeholder="Name" formControlName="name" required>
+      <mat-error *ngIf="compoundForm.get('name').hasError('required')">Name is required</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Description" formControlName="description" required>
+      <mat-error *ngIf="compoundForm.get('description').hasError('required')">Description is required</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Image Source" formControlName="image" required>
+      <mat-error *ngIf="compoundForm.get('image').hasError('required')">Image Source is required</mat-error>
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button class="cancel-button" (click)="closeDialog()">Cancel</button>
+    <button mat-button class="create-button" (click)="createCompound(createFrom)"
+      cdkFocusInitial>Create</button>
+  </div>
+  <div class="close-btn">
+    <button type="button" class="close-button" mat-dialog-close title="Close" class="dialog-close-common"
+      (click)="closeDialog()">
+      <i class="fas fa-times-circle fa-2x"></i>
+    </button>
+  </div>
+</form>
